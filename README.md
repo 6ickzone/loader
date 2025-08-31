@@ -21,7 +21,7 @@
     <pre><code>/loader/wp-loader.php    # Main multi-mode loader panel
 /loader/b64loader.php           # One-liner base64 loader
 /loader/loadman.php             # Stealth loader (cURL + file_get_contents) with Mandarin variables
-/docs/                   # Optional per-mode documentation
+
 </code></pre>
   </div>
 
